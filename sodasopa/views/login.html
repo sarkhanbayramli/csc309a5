@@ -1,0 +1,68 @@
+<% include header.html %>
+	<div class="container">
+		<div class="row" style="padding-top:30px">
+			<div class="col-sm-6 col-sm-offset-3" style="background: white">
+				<div class="row">
+					<div onclick="showLogin()" class="col-xs-8 col-sm-6" style="text-align:center; background: #3F5765; cursor: pointer;">
+		        		<span class="login-button">LOGIN</span>
+		      		</div>
+		      		<div onclick="showRegister()" class="col-xs-4 col-sm-6" style="text-align:center; background: #FF530D; cursor: pointer;">
+		        		<span class="login-button">REGISTER</span>
+		      		</div>
+		    	</div>
+		   </div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3" style="background: white; padding: 20px;">
+		    	<!-- LOGIN area -->
+			    <form method="post" id="login-form">
+					<div class="form-group">
+					    <label>Email address</label>
+					    <input type="email" name="email" class="form-control" id="emailInput" placeholder="Email">
+				 	</div>
+				  	<div class="form-group">
+					    <label>Password</label>
+					    <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Password">
+				 	</div>
+	                <input type="hidden" id="lon" name="lon" value="">
+	                <input type="hidden" id="lat" name="lat" value="">
+	  				<button type="submit" class="btn btn-default">Login</button>
+				</form>
+
+				<!-- REGISTER area -->
+				<form method="post" id="register-form" style="display:none;">
+					<div class="form-group">
+					    <label>Email address</label>
+					    <input type="email" name="email" class="form-control" id="emailInput" placeholder="Email">
+				 	</div>
+					<div class="form-group">
+					    <label>Name</label>
+					    <input type="text" name="name" class="form-control" id="nameInput" placeholder="Name">
+				 	</div>
+				  	<div class="form-group">
+					    <label>Password</label>
+					    <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Password">
+				 	</div>
+				  	<div class="form-group">
+					    <label>Confirm Password</label>
+					    <input type="password" name="password_confirm" class="form-control" id="confirmationInput" placeholder="Password">
+				 	</div>      
+	          		<input type="hidden" id="lon" name="lon" value="">
+	          		<input type="hidden" id="lat" name="lat" value="">
+	  				<button type="submit" class="btn btn-default">Sign Up</button>
+				</form>
+		  	</div>
+		</div>
+    </div>
+
+    <script>
+        function showLogin(){
+            document.getElementById("register-form").style.display = "none";
+           	document.getElementById("login-form").style.display = "inline";
+        }
+        function showRegister(){
+            document.getElementById("register-form").style.display = "inline";
+           	document.getElementById("login-form").style.display = "none";
+        }
+    </script>
+<% include footer.html %>

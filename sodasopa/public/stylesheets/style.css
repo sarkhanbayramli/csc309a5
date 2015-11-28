@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #DAEDE2;
+  background: #EFEFEF;
 }
 
 a {
@@ -8,7 +8,7 @@ a {
 }
 
 .navbar{
-	background: #333745;
+	background: #3F5765;
 	padding: 20px;
 	color:white;
 }
@@ -25,8 +25,17 @@ a {
 
 .nav li{
 	color: white;
-	padding: 10px 15px 10px 15px;
 	font-weight: bold;
+}
+
+.nav li a{
+	padding: 10px 15px 10px 15px;
+	color:white;
+}
+
+.nav li a:hover{
+	background: none;
+	color: #BDD4DE;
 }
 
 .home-search{
@@ -42,7 +51,14 @@ a {
 }
 
 .container{
-	width: 950px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.login-button{
+	font-size: 1.3em;
+	font-weight: bold;
+	color:white;
+	padding: 15px;
+	display: block;
 }
