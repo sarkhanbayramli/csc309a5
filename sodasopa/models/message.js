@@ -10,6 +10,7 @@ db.once('open', function (callback) {
 var messageSchema = mongoose.Schema({
 	fromId: String,
 	toId: String,
+	sentTime: Date,
 	messageText: String
 });
 

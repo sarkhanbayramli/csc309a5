@@ -11,6 +11,7 @@ var feedbackSchema = mongoose.Schema({
 	businessId: String,
 	authorId: String,
 	rating: Number, 
+	writeTime: Date,
 	feedbackText: String
 });
 
