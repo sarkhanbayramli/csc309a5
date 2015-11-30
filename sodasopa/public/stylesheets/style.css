@@ -8,7 +8,7 @@ a {
 }
 
 .navbar{
-	background: #3F5765;
+	background: #1695A3;
 	padding: 20px;
 	color:white;
 }
@@ -38,15 +38,17 @@ a {
 	color: #BDD4DE;
 }
 
+.nav li a:focus{
+	background: none;
+}
+
 .home-search{
 	padding: 50px 0;
 }
 
 .home-search-bar{
 	width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 25px 20px 25px 20px;
+	padding: 20px 15px;
 	font-size: 1.2em;
 }
 
