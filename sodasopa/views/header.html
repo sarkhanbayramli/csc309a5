@@ -28,6 +28,10 @@
       <li><input type="submit" class="btn" style="background: none; padding: 9px 15px; font-weight:bold;" value="SEARCH"></li>
       <li><a href="/">HOME</a></li>
       <li><a href="/">BROWSE</a></li>
+      <% if(loggedId) { %>
+      <li><a href="/logout">LOGOUT</a></li>
+      <% } else{ %>
       <li><a href="/login">LOGIN/REGISTER</a></li>
+      <% } %>
     </div>
   </div>
