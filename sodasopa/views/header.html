@@ -20,15 +20,21 @@
 
   <div class="navbar">
     <div class="navbar-header">
-      <span class="logo">SodoSopa</span>
+      <span class="logo"><a href="/">SodoSopa</a></span>
     </div>
     <div class="nav navbar-right navbar-nav">
-      <li>
+      <!--<li>
     <input type="search" class="form-control home-search-bar" placeholder="Name of the business you are looking for..."></li>
-      <li><input type="submit" class="btn" style="background: none; padding: 9px 15px; font-weight:bold;" value="SEARCH"></li>
+      <li><input type="submit" class="btn" style="background: none; padding: 9px 15px; font-weight:bold;" value="SEARCH"></li>-->
       <li><a href="/">HOME</a></li>
-      <li><a href="/">BROWSE</a></li>
+      <li><a href="/search">SEARCH</a></li>
+      <li><a href="/browse">BROWSE</a></li>
+      <% if(type=="admin"){ %>
+      <li><a href="/admin">ADMIN</a></li>
+      <% } %>
       <% if(loggedId) { %>
+      <li><a href="/add">NEW BUSINESS</a></li>
+      <li><a href="/profile">PROFILE</a></li>
       <li><a href="/logout">LOGOUT</a></li>
       <% } else{ %>
       <li><a href="/login">LOGIN/REGISTER</a></li>

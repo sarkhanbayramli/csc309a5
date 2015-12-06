@@ -1,0 +1,21 @@
+<% include header.html %>
+	<div class="container">
+	    <h3 style="text-align:center;">Search</h3>
+	    <div class="row" style="padding-top: 20px;">
+	    	<div class="col-md-8 col-md-offset-2">
+	    		<form method="post">
+    			<input name="search" type="search" class="form-control home-search-bar" placeholder="Name of the business you are looking for..."><br>
+    			<input style="margin-left:auto; margin-right:auto; display:block" type="submit" class="btn btn-info btn-lg" value="SEARCH">
+    			</form>
+	    		<table class="table table-striped">
+	    			<% if(typeof list != 'undefined'){ 
+	    			   for(var i=0; i < list.length; i++){ %>
+	    			<tr>
+						<td><a href="/business/<%=list[i]._id%>"><%= list[i].name %></a></td>
+					</tr>
+					<% }} %>
+	    		</table>
+	    	</div>
+	    </div>
+    </div>
+<% include footer.html %>

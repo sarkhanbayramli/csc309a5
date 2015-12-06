@@ -1,0 +1,23 @@
+<% include header.html %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" style="background: white;  padding: 20px">
+				<div style="text-align:center;">
+					<a href="/admin" class="btn btn-info btn-lg">Users</a>
+					<a href="/admin/business" class="btn btn-info btn-lg">Businesses</a>
+					<a href="/admin/feedback" class="btn btn-info btn-lg">Feedbacks</a>
+				</div>
+				<h3>Businesses</h3>
+				<table class="table table-striped" style="margin-top:20px">
+	    			<% 
+	    			for(var i=0; i < list.length; i++){ %>
+	    			<tr>
+						<td><a href="/business/<%=list[i]._id%>"><%= list[i].name %></a></td>
+						<td><a href="/deletebusiness/<%=list[i]._id%>">Delete</a></td>
+					</tr>
+					<% } %>
+	    		</table>
+			</div>
+		</div>
+    </div>
+<% include footer.html %>

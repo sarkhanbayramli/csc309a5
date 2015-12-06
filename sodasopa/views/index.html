@@ -3,39 +3,55 @@
 	    <h3 style="text-align:center;">TOP RESTAURANTS</h3>
 	    <div class="row" style="padding-top: 20px; text-align:center;">
 	    	<div class="col-md-2 col-md-offset-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>City Sushi</h3>
+	    	<% if(Object.keys(restaurants)[0]){%>
+	    		<a href="/business/<%=Object.keys(restaurants)[0]%>"><img class="img-circle" src="business/<%=restaurants[Object.keys(restaurants)[0]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(restaurants)[0]%>"><%=restaurants[Object.keys(restaurants)[0]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>Soda Bar</h3>
+	    	<% if(Object.keys(restaurants)[1]){%>
+	    		<a href="/business/<%=Object.keys(restaurants)[1]%>"><img class="img-circle" src="business/<%=restaurants[Object.keys(restaurants)[1]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(restaurants)[1]%>"><%=restaurants[Object.keys(restaurants)[1]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>American Dream</h3>
+	    	<% if(Object.keys(restaurants)[2]){%>
+	    		<a href="/business/<%=Object.keys(restaurants)[2]%>"><img class="img-circle" src="business/<%=restaurants[Object.keys(restaurants)[2]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(restaurants)[2]%>"><%=restaurants[Object.keys(restaurants)[2]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>Mexipotle</h3>
+	    	<% if(Object.keys(restaurants)[3]){%>
+	    		<a href="/business/<%=Object.keys(restaurants)[3]%>"><img class="img-circle" src="business/<%=restaurants[Object.keys(restaurants)[3]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(restaurants)[3]%>"><%=restaurants[Object.keys(restaurants)[3]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    </div>
 	    <h3 style="text-align:center;">TOP HOTELS</h3>
 	    <div class="row" style="padding-top: 20px; text-align:center;">
+	    	<% if(Object.keys(hotels)[0]){%>
 	    	<div class="col-md-2 col-md-offset-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>Six Seasons</h3>
+	    		<a href="/business/<%=Object.keys(hotels)[0]%>"><img class="img-circle" src="business/<%=hotels[Object.keys(hotels)[0]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(hotels)[0]%>"><%=hotels[Object.keys(hotels)[0]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>J.W. Barriott</h3>
+	    	<% if(Object.keys(hotels)[1]){%>
+	    		<a href="/business/<%=Object.keys(hotels)[1]%>"><img class="img-circle" src="business/<%=hotels[Object.keys(hotels)[1]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(hotels)[1]%>"><%=hotels[Object.keys(hotels)[1]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>Black Garage</h3>
+	    	<% if(Object.keys(hotels)[2]){%>
+	    		<a href="/business/<%=Object.keys(hotels)[2]%>"><img class="img-circle" src="business/<%=hotels[Object.keys(hotels)[2]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(hotels)[2]%>"><%=hotels[Object.keys(hotels)[2]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    	<div class="col-md-2">
-	    		<img class="img-circle" src="images/recommended_holder.png" width="150" height="150">
-	    		<h3>White Mattress</h3>
+	    	<% if(Object.keys(hotels)[3]){%>
+	    		<a href="/business/<%=Object.keys(hotels)[3]%>"><img class="img-circle" src="business/<%=hotels[Object.keys(hotels)[3]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(hotels)[3]%>"><%=hotels[Object.keys(hotels)[3]].name %></a></h3>
+	    	<% }%>
 	    	</div>
 	    </div>
     </div>

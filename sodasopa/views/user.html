@@ -2,30 +2,35 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-md-offset-2" style="background: white">
-				<h3>Username</h3>
+				<h3><%=username%></h3>
 				<p>
-					<img src="/images/recommended_holder.png" width="150" height="200">
+					<img src="/avatars/<%=pic%>" width="150" height="200">
 				</p>
 				<p>
-					<strong>Location: </strong>Toronto, Canada
+					<strong>Location: </strong><%=location%>
 				</p>
 				<p>
+					<% if(loggedUser == currentUser){ %>
+					<a href="/editprofile" class="btn-md btn btn-warning">Edit profile</a>
+					<% } else{%>
 					<span class="btn-md btn btn-info">Send a message</span>
+					<% }%>
 				</p>
 			</div>
 			<div class="col-md-6" style="padding-top:15px">
-				<h4>Feedbacks: 8</h4>
+				<h4>Feedbacks: <%=list.length%></h4>
+
+				<% for(var i=0; i < list.length; i++){ %>
 				<div class="row" style="margin-top:12px">
 					<div class="col-md-12" style="background: #BDD4DE">
-					<h4>Sushi City:</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non gravida risus. Vestibulum vitae metus ac neque molestie suscipit. Sed nec ultrices dui, eu dignissim enim.
+					<h4><%=list[i].businessId[0].name%></h4>
+					<p><b>Rating:</b> <%=list[i].rating%>
 					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non gravida risus. Vestibulum vitae metus ac neque molestie suscipit. Sed nec ultrices dui, eu dignissim enim.
+					<p><%=list[i].feedbackText%>
 					</p>
 					</div>
 				</div>
+				<% } %>
 			</div>
 			<!-- End feedback -->
 		</div>

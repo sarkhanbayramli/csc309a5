@@ -1,0 +1,19 @@
+<% include header.html %>
+	<div class="container">
+	    <h3 style="text-align:center;">List of Businesses</h3>
+	    <div class="row" style="padding-top: 20px;">
+	    	<div class="col-md-8 col-md-offset-2">
+	    		<table class="table table-striped">
+	    			<% 
+	    			var k = Object.keys(map);
+	    			for(var i=0; i < k.length; i++){ %>
+	    			<tr>
+						<td><a href="/business/<%=k[i]%>"><%= map[k[i]].name %></a></td>
+						<td><%= Math.round(map[k[i]].rating/map[k[i]].times) %> stars</td>
+					</tr>
+					<% } %>
+	    		</table>
+	    	</div>
+	    </div>
+    </div>
+<% include footer.html %>

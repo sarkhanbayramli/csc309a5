@@ -19,6 +19,14 @@ a {
 	font-weight: bold;
 }
 
+.logo a{
+	color:white;
+}
+
+.logo a:hover{
+	text-decoration: none;
+}
+
 .navbar-header{
 
 }
@@ -47,7 +55,6 @@ a {
 }
 
 .home-search-bar{
-	width: 600px;
 	padding: 20px 15px;
 	font-size: 1.2em;
 }
@@ -63,4 +70,8 @@ a {
 	color:white;
 	padding: 15px;
 	display: block;
+}
+
+textarea{
+	color: black;
 }

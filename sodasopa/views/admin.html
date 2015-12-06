@@ -1,0 +1,30 @@
+<% include header.html %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" style="background: white;  padding: 20px">
+				<div style="text-align:center;">
+					<a href="/admin" class="btn btn-info btn-lg">Users</a>
+					<a href="/admin/business" class="btn btn-info btn-lg">Businesses</a>
+					<a href="/admin/feedback" class="btn btn-info btn-lg">Feedbacks</a>
+				</div>
+				<h3>Users</h3>
+				<table class="table table-striped" style="margin-top:20px">
+	    			<% 
+	    			for(var i=0; i < list.length; i++){ %>
+	    			<tr>
+						<td><a href="/user/<%=list[i]._id%>"><%= list[i].name %></a></td>
+						<td><a href="/user/<%=list[i]._id%>"><%= list[i].email %></a></td>
+						<td><%= list[i].userType %></td>
+						<td>
+						<% if(id != list[i]._id && list[i].userType != 'admin'){%><a href="/makeadmin/<%=list[i]._id%>">Make admin</a><%} %>
+
+						<% if(id != list[i]._id && list[i].userType == 'admin'){%><a href="/makenormal/<%=list[i]._id%>">Make normal</a><%} %>
+						
+						</td>
+					</tr>
+					<% } %>
+	    		</table>
+			</div>
+		</div>
+    </div>
+<% include footer.html %>

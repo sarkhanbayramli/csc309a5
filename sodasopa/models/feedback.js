@@ -8,10 +8,10 @@ db.once('open', function (callback) {
 });
 
 var feedbackSchema = mongoose.Schema({
-	businessId: String,
-	authorId: String,
+	businessId: [{type: mongoose.Schema.Types.ObjectId, ref: 'Business' }],
+	authorId: [{type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 	rating: Number, 
-	writeTime: Date,
+	writeTime: {type:Date, default: Date.now},
 	feedbackText: String
 });
 

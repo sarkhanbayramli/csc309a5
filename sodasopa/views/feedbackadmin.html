@@ -1,0 +1,32 @@
+<% include header.html %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" style="background: white;  padding: 20px">
+				<div style="text-align:center;">
+					<a href="/admin" class="btn btn-info btn-lg">Users</a>
+					<a href="/admin/business" class="btn btn-info btn-lg">Businesses</a>
+					<a href="/admin/feedback" class="btn btn-info btn-lg">Feedbacks</a>
+				</div>
+				<h3>Feedbacks</h3>
+				<table class="table table-striped" style="margin-top:20px">
+	    			<% 
+	    			for(var i=0; i < list.length; i++){ %>
+	    			<tr>
+						<td>
+						<% if(list[i].authorId[0]){%>
+						<a href="/user/<%=list[i].authorId[0]._id%>"><%= list[i].authorId[0].name %></a>
+						<% } %>
+						</td>
+						<td>
+						<% if(list[i].businessId[0]){%>
+						<a href="/business/<%=list[i].businessId[0]._id%>"><%= list[i].businessId[0].name %></a>
+						<% } %>
+						</td>
+						<td><a href="/deletefeedback/<%=list[i]._id%>">Delete</a></td>
+					</tr>
+					<% } %>
+	    		</table>
+			</div>
+		</div>
+    </div>
+<% include footer.html %>

@@ -2,57 +2,87 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2" style="background: white">
-				<h3>City Sushi</h3>
+				<h3><%= bname %></h3>
 				<p>
-					<strong>Average Rating: </strong>4 stars
+					<strong>Average Rating: </strong><%= rate %> stars
 				</p>
 				<p>
-					<img src="/images/recommended_holder.png" width="740" height="280">
+					<img src="/business/<%=pic%>" width="740" height="280">
 				</p>
 				<p>
-					<strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non gravida risus. Vestibulum vitae metus ac neque molestie suscipit. Sed nec ultrices dui, eu dignissim enim.
-				</p>
+					<%= description %>
 				<p>
-					<strong>Address: </strong>75 St. George str.<br>
-					<strong>Tel.: </strong>+1 647 877 87 84<br>
-					<strong>Wi-Fi: </strong>YES<br>
-					<strong>Price: </strong>$$<br>
-					<strong>Parking: </strong>Yes<br>
-					<strong>Reservation: </strong>Yes<br>
+					<% if(loggedUser == owner){ %>
 
-				</p>
-				<p>
+					<a href="/editbusiness/<%=bid%>" class="btn-md btn btn-warning">Change Description</a>
+					<% } else{%>
 					<span class="btn-md btn btn-info">Send a message to the owner</span>
+					<% }%>
 				</p>
 			</div>
 		</div>
-
+		<div class="row" style="padding-top: 20px; text-align:center;">
+		<h3>Recommended businesses:</h3>
+	    	<div class="col-md-2 col-md-offset-2">
+	    	<% if(Object.keys(recommended)[0]){%>
+	    		<a href="/business/<%=Object.keys(recommended)[0]%>"><img class="img-circle" src="/business/<%=recommended[Object.keys(recommended)[0]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(recommended)[0]%>"><%=recommended[Object.keys(recommended)[0]].name %></a></h3>
+	    	<% }%>
+	    	</div>
+	    	<div class="col-md-2">
+	    	<% if(Object.keys(recommended)[1]){%>
+	    		<a href="/business/<%=Object.keys(recommended)[1]%>"><img class="img-circle" src="/business/<%=recommended[Object.keys(recommended)[1]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(recommended)[1]%>"><%=recommended[Object.keys(recommended)[1]].name %></a></h3>
+	    	<% }%>
+	    	</div>
+	    	<div class="col-md-2">
+	    	<% if(Object.keys(recommended)[2]){%>
+	    		<a href="/business/<%=Object.keys(recommended)[2]%>"><img class="img-circle" src="/business/<%=recommended[Object.keys(recommended)[2]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(recommended)[2]%>"><%=recommended[Object.keys(recommended)[2]].name %></a></h3>
+	    	<% }%>
+	    	</div>
+	    	<div class="col-md-2">
+	    	<% if(Object.keys(recommended)[3]){%>
+	    		<a href="/business/<%=Object.keys(recommended)[3]%>"><img class="img-circle" src="/business/<%=recommended[Object.keys(recommended)[3]].pic%>" width="150" height="150"></a>
+	    		<h3><a href="/business/<%=Object.keys(recommended)[3]%>"><%=recommended[Object.keys(recommended)[3]].name %></a></h3>
+	    	<% }%>
+	    	</div>
+	    </div>
 		<!-- Write a new feedback -->
+		<% if(loggedUser){ %>
 		<div class="row" style="margin-top:20px; color: white">
 			<div class="col-md-8 col-md-offset-2" style="background: #FF980D">
+				<form method="post">
 				<h4>Write a new feedback:</h4>
-				<p><strong>Rate: </strong>1 to 5 stars
+				<p><strong>Rate: </strong>
+				<select name="rating">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
 				</p>
 				<p>
-					<textarea style="width: 100%; height: 100px"></textarea>
+					<textarea name="feedback_text" style="width: 100%; height: 100px"></textarea>
 				</p>
 				<p>
 					<input type="submit" class="btn-md btn-default btn" value="Submit">
 				</p>
+				</form>
 			</div>
 		</div>
-
+		<% }%>
+		<% for(var i=0; i < list.length; i++){ %>
 		<!-- Each feedback -->
 		<div class="row" style="margin-top:20px">
 			<div class="col-md-8 col-md-offset-2" style="background: #BDD4DE">
-				<h4>Porter: 5 stars</h4>
+				<h4><a href="/user/<%= list[i].authorId[0]._id%>"><%= list[i].authorId[0].name %></a> - Rating: <%= list[i].rating %></h4>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non gravida risus. Vestibulum vitae metus ac neque molestie suscipit. Sed nec ultrices dui, eu dignissim enim.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non gravida risus. Vestibulum vitae metus ac neque molestie suscipit. Sed nec ultrices dui, eu dignissim enim.
+					<%= list[i].feedbackText %>
 				</p>
 			</div>
 		</div>
+		<% } %>
     </div>
 <% include footer.html %>
